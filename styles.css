@@ -1,40 +1,78 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.button-container {
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.btn-container {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 500px;
+    height: 500px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    border: solid 1px black;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
 }
 
-.circle-button {
-    width: 100px;
-    height: 100px;
-    background-color: #3498db;
+.circle {
+    position: absolute;
     border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-}
-
-.half-circle {
-    width: 50px;
-    height: 100px;
-    background-color: #e74c3c;
-    border-radius: 50px 50px 0 0;
-    position: absolute;
-    transition: transform 0.5s;
-}
-
-.circle-inner {
-    left: 0;
-    transform-origin: 100% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
 }
 
 .circle-outer {
-    right: 0;
-    transform-origin: 0 50%;
+    width: 300px;
+    height: 300px;
+    background-color: aquamarine;
+    border: solid rgb(163, 163, 163) 20px;
+    border-left: solid black 20px;
+    border-top: solid black 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: translate(-50%, 50%) rotate(0deg); }
+    100% { transform: translate(-50%, 50%) rotate(360deg); }
+}
+
+.circle-middle {
+    width: 250px;
+    height: 250px;
+    background-color: blanchedalmond;
+    border: solid rgb(146, 146, 146) 20px;
+    border-right: solid black 20px;
+    border-bottom: solid black 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate-reverse 4s linear infinite;
+}
+
+@keyframes rotate-reverse {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.circle-inner {
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
 }
