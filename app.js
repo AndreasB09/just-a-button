@@ -17,8 +17,8 @@ const insults = [
 ];
 
 function randomInsult() {
-    const randomIndex = Math.floor(Math.random() * insults.length);
-    return insults[randomIndex];
+    const randomInsultIndex = Math.floor(Math.random() * insults.length);
+    return insults[randomInsultIndex];
 }
 
 function showHidden() {
@@ -28,11 +28,13 @@ function showHidden() {
     
     outerCircle.style.opacity = '1';
     middleCircle.style.opacity = '1';
+    insultContainer.style.opacity = '1';
 
     insultContainer.textContent = randomInsult();
     
     setTimeout(() => {
         outerCircle.style.opacity = '0';
         middleCircle.style.opacity = '0';
+        insultContainer.style.opacity = '0';
     }, 4000);
 }
